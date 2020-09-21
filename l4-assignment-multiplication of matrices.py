@@ -23,7 +23,7 @@ for i in range(n):
 
 #creating a matrix to store
 n = [[0 for j in range(n)]for i in range(n)]
-#adding two sparse matrices and storing in other matrix
+#multiplying two sparse matrices and storing in other matrix
 for i in range(len(a)):
     for j in range (len(b[0])):
         for k in range (len(b)):
