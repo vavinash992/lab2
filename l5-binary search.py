@@ -1,22 +1,31 @@
-# binary search
-#defining a function for binary search
-def binary_search(a, x): 
-    low = 0
-    high = len(a) - 1
-    mid = 0
-  
-    while low <= high: 
-  
-        mid = (high + low) // 2
-        if a[mid] < x: 
-            low = mid + 1
-        elif a[mid] > x: 
-            high = mid - 1
-        else: 
-            return mid 
-    return -1 
-a = [ 2, 3, 4, 10, 40 ] 
-x = 10
-#printing index of the searched element
-result = binary_search(a, x)
-print('the index of the element is :',result)
+arr = [1,17,18,45,77]
+x = int(input("Enter the element to search: "))
+l = 0
+h = len(arr)-1
+flag = 0
+mid = (h+l)//2
+
+if x == arr[mid]:
+    flag = 1
+    loc = mid
+    
+elif x < arr[mid]:
+    l = 0
+    h = mid
+    for i in range(l,h):
+        if x == arr[i]:
+            loc = i
+            flag = 1
+            break
+else:
+    l = mid+1
+    h = len(arr)
+    for i in range(l,h):            
+        if x == arr[i]:
+            loc = i
+            flag = 1
+            break
+if flag == 1:
+    print("Element found at " + str(loc))
+else:    
+    print("Element not found"
